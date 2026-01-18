@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textiles - El Tejar</title>
+    <style>
+        /* Reset básico y tipografía */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: Arial, sans-serif; background-color: #fdfdfd; color: #333; }
+
+        /* Encabezado */
+        header { background-color: #ffffff; width: 100%; border-bottom: 3px solid #780E0E; }
+        
+        /* Cintillo superior */
+        
+		.cintillo-top {
+            width: 100%;
+            height: 150px;
+            background-image: url('Fondo2.png'); /* Imagen alusiva a textiles */
+            background-size: cover;
+            background-position: center;
+			
+        }
+		
+		
+		
+		
+		
+		/*
+		background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('tu-imagen.jpg');
+		*/
+		
+		
+		
+		
+		.titulo-sobresaliente {
+			color: white;             /* Color blanco para que resalte */
+			font-size: 3rem;          /* Tamaño grande */
+			font-weight: bold;
+			text-transform: uppercase;
+			font-family: Arial, sans-serif;
+
+			/* El truco para que "sobresalga": Sombra de texto */
+			/* Esto crea un contorno oscuro para que se lea aunque el fondo sea claro */
+			text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8), 
+					 0px 0px 5px rgba(0, 0, 0, 1);
+					 
+			z-index: 10;              /* Asegura que esté por encima de todo */
+			align-items: center;    /* Centra el texto verticalmente */
+			justify-content: center; /* Centra el texto horizontalmente */
+			position: relative;
+		}
+		
+
+        /* Barra de navegación */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 5%;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .logo img {
+            height: 70px; /* Ajusta según el diseño de tu logo */
+            display: block;
+        }
+
+        .menu { list-style: none; display: flex; }
+        .menu li { margin-left: 20px; }
+        .menu a {
+            text-decoration: none;
+            color: #780E0E;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        .menu a:hover { color: #1F0000; border-bottom: 2px solid #1F0000; }
+
+        /* Contenedor de Secciones */
+        .container { padding: 40px 10%; min-height: 70vh; }
+        .apartado { display: none; animation: fadeIn 0.5s; }
+        .activo { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Estilos específicos de Servicios */
+        .servicio-caja {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .servicio-info { flex: 2; padding-right: 20px; }
+        .servicio-img { flex: 1; text-align: right; }
+        .servicio-img img { width: 100%; max-width: 180px; border-radius: 8px; }
+
+        /* Pie de página (Cintillo) */
+        footer {
+            background-color: #780E0E;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        /* Estilos Contacto */
+        .mapa { margin-top: 20px; width: 100%; height: 350px; border: 0; border-radius: 10px; }
+        .social-links a { margin-right: 15px; color: #780E0E; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<header>
+    <!--<div class="cintillo-top"></div>-->
+	
+	<div class="cintillo-top">
+		<h1 class="titulo-sobresaliente" align="center" justify-content="center" justify="center">Textiles el Guarco</h1>
+	</div>
+	
+    
+    <nav>
+        <div class="logo">
+            <img src="logo1.png" alt="Logo de la Textilera">
+        </div>
+        <ul class="menu">
+            <li><a onclick="navegar('inicio')">Inicio</a></li>
+            <li><a onclick="navegar('historia')">Historia</a></li>
+            <li><a onclick="navegar('servicios')">Servicios</a></li>
+            <li><a onclick="navegar('contacto')">Contáctenos</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    
+    <section id="inicio" class="apartado activo">
+        <h1>Bienvenidos</h1>
+        <p style="margin-top:20px;"><strong>Presentación:</strong> Somos una empresa líder en el sector textil, comprometida con la creación de productos de alta calidad que visten los sueños de nuestros clientes.</p>
+        <p style="margin-top:15px;"><strong>Misión:</strong> Fabricar soluciones textiles integrales con eficiencia y responsabilidad, garantizando bienestar para nuestros empleados y valor para nuestros clientes.</p>
+        <p style="margin-top:15px;"><strong>Visión:</strong> Ser reconocidos mundialmente por nuestra innovación en procesos sostenibles y la excelencia en el diseño de prendas industriales y casuales.</p>
+    </section>
+
+    <section id="historia" class="apartado">
+        <h1>Nuestra Trayectoria</h1>
+        <p>Iniciamos operaciones en el año [Año], con el firme propósito de revolucionar la manufactura local. Lo que comenzó con un par de máquinas de coser, ha crecido hasta convertirse en una planta robusta.</p>
+        <p>A lo largo de los años, nos hemos expandido logrando emplear a un gran equipo de profesionales locales. Nuestra ubicación en el área de Cartago nos permite una logística envidiable.</p>
+        <p>Cumplimos estrictamente con toda la legislación de Costa Rica: cargas sociales, permisos del Ministerio de Salud y normativas municipales, asegurando un trabajo justo y seguro.</p>
+    </section>
+
+    <section id="servicios" class="apartado">
+        <h1>Servicios Especializados</h1>
+
+        <div class="servicio-caja">
+            <div class="servicio-info">
+                <h2>Confección de uniformes industriales</h2>
+                <p>Prendas diseñadas para la protección y comodidad del trabajador, usando telas de alta resistencia química y mecánica.</p>
+            </div>
+            <div class="servicio-img"><img src="S_UniformesIndustriales.jpeg" alt="Servicio 1"></div>
+        </div>
+
+        <div class="servicio-caja">
+            <div class="servicio-info">
+                <h2>Confección de ropa casual</h2>
+                <p>Líneas de moda para el día a día, enfocadas en tendencias modernas y textiles frescos como algodón y lino.</p>
+            </div>
+            <div class="servicio-img"><img src="S_RopaCasual.jpeg" alt="Servicio 2"></div>
+        </div>
+
+        <div class="servicio-caja">
+            <div class="servicio-info">
+                <h2>Confección de prendas</h2>
+                <p>Trabajos a medida y producción en serie de camisas, pantalones y accesorios textiles de alta gama.</p>
+            </div>
+            <div class="servicio-img"><img src="S_ConfeccionDePrendas.jpeg" alt="Servicio 3"></div>
+        </div>
+
+        <div class="servicio-caja">
+            <div class="servicio-info">
+                <h2>Tienda física</h2>
+                <p>Visítenos en nuestro punto de venta directo para conocer nuestras colecciones y aprovechar precios de fábrica.</p>
+            </div>
+            <div class="servicio-img"><img src="S_TiendaFisica.jpeg" alt="Servicio 4"></div>
+        </div>
+    </section>
+
+    <section id="contacto" class="apartado">
+        <h1>Hablemos</h1>
+        <div style="margin-top:20px;">
+            <p>📍 <strong>Dirección:</strong> Tejar de El Guarco, Cartago, Costa Rica.</p>
+            <p>📞 <strong>Teléfono:</strong> 25XX-XXXX</p>
+            <p>📧 <strong>Email:</strong> contacto@textilera.com</p>
+            <p>📱 <strong>WhatsApp:</strong> 8888-8888</p>
+            <div class="social-links" style="margin-top:15px;">
+                <a href="#">TikTok</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+        
+        <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15725.123456789!2d-83.9515!3d9.8456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa11fd2e12e1234%3A0x123456789abcdef!2sTejar%2C%20Cartago!5e0!3m2!1ses!2scr!4v123456789"></iframe>
+    </section>
+
+</div>
+
+<footer>
+    <p>Textiles El Tejar &copy; 2026 | El Guarco, Cartago, Costa Rica</p>
+</footer>
+
+<script>
+    function navegar(id) {
+        // Ocultar todos los apartados
+        const secciones = document.querySelectorAll('.apartado');
+        secciones.forEach(s => s.classList.remove('activo'));
+
+        // Mostrar el seleccionado
+        document.getElementById(id).classList.add('activo');
+        
+        // Regresar arriba
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+</script>
+
+</body>
+</html>

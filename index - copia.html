@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textilera Profesional</title>
+    <style>
+        /* Estilos Generales */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Encabezado y Cintillo */
+        header {
+            background: #fff;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .cintillo-superior {
+            width: 100%;
+            height: 120px;
+            background: #2c3e50;
+            overflow: hidden;
+        }
+
+        .cintillo-superior img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 5%;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo-container img {
+            height: 60px;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            margin: 0;
+        }
+
+        .menu li {
+            margin-left: 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .menu a:hover {
+            color: #007bff;
+        }
+
+        /* Contenido */
+        .container {
+            padding: 40px 10%;
+            min-height: 60vh;
+        }
+
+        .section {
+            display: none; /* Se ocultan por defecto */
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* Estilos para Servicios */
+        .servicio-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .servicio-texto {
+            flex: 2;
+            padding-right: 20px;
+        }
+
+        .servicio-imagen {
+            flex: 1;
+        }
+
+        .servicio-imagen img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        /* Pie de Página */
+        footer {
+            margin-top: 40px;
+        }
+
+        .cintillo-inferior {
+            width: 100%;
+            height: 60px;
+            background: #2c3e50;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Mapas y Enlaces */
+        .mapa-contenedor {
+            width: 100%;
+            height: 300px;
+            background: #ddd;
+            margin-top: 20px;
+        }
+
+        .redes-sociales a {
+            display: inline-block;
+            margin-right: 15px;
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="cintillo-superior">
+            <img src="https://images.unsplash.com/photo-1558231011-50461592864d?auto=format&fit=crop&q=80&w=1200" alt="Textiles y Telas">
+        </div>
+        
+        <nav>
+            <div class="logo-container">
+                <img src="https://via.placeholder.com/150x60?text=LOGO+TEXTIL" alt="Logo Empresa">
+            </div>
+            <ul class="menu">
+                <li><a onclick="showSection('inicio')">Inicio</a></li>
+                <li><a onclick="showSection('historia')">Historia</a></li>
+                <li><a onclick="showSection('servicios')">Servicios</a></li>
+                <li><a onclick="showSection('contacto')">Contáctenos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <section id="inicio" class="section active">
+            <h1>Bienvenidos a nuestra Textilera</h1>
+            <p><strong>Presentación:</strong> Somos una empresa dedicada a la excelencia en el mundo de los hilos y las telas, transformando materias primas en productos de la más alta calidad para satisfacer las necesidades del mercado nacional e internacional.</p>
+            <p><strong>Misión:</strong> Brindar soluciones textiles innovadoras y personalizadas que superen las expectativas de nuestros clientes, apoyados en tecnología de punta y un equipo humano altamente capacitado.</p>
+            <p><strong>Visión:</strong> Ser el referente líder en la industria textil en Costa Rica para el año 2030, destacándonos por nuestra sostenibilidad, responsabilidad social y calidad incomparable.</p>
+        </section>
+
+        <section id="historia" class="section">
+            <h1>Nuestra Historia</h1>
+            <p>Fundada en el año [Año de Inicio], nuestra empresa comenzó como un pequeño taller familiar. Con el paso de los años, el crecimiento fue constante gracias a nuestra dedicación a la costura fina y al detalle.</p>
+            <p>Hoy contamos con un equipo de más de [Número] empleados, quienes son el motor de nuestra expansión. Actualmente operamos en una planta equipada con tecnología moderna en la zona de Cartago.</p>
+            <p>Nos enorgullece cumplir con toda la legislación vigente, permisos municipales, de salud y leyes laborales, garantizando un entorno de trabajo seguro y digno para todos nuestros colaboradores.</p>
+        </section>
+
+        <section id="servicios" class="section">
+            <h1>Nuestros Servicios</h1>
+
+            <div class="servicio-item">
+                <div class="servicio-texto">
+                    <h2>Confección de uniformes industriales</h2>
+                    <p>Creamos prendas de alta resistencia diseñadas para el trabajo pesado, utilizando telas certificadas que garantizan durabilidad y seguridad para el personal operativo.</p>
+                </div>
+                <div class="servicio-imagen">
+                    <img src="https://via.placeholder.com/300x200?text=Uniformes+Industriales" alt="Servicio 1">
+                </div>
+            </div>
+
+            <div class="servicio-item">
+                <div class="servicio-texto">
+                    <h2>Confección de ropa casual</h2>
+                    <p>Diseñamos y fabricamos prendas del día a día con un enfoque en la comodidad y las tendencias actuales, perfectas para marcas privadas y tiendas.</p>
+                </div>
+                <div class="servicio-imagen">
+                    <img src="https://via.placeholder.com/300x200?text=Ropa+Casual" alt="Servicio 2">
+                </div>
+            </div>
+
+            <div class="servicio-item">
+                <div class="servicio-texto">
+                    <h2>Confección de prendas</h2>
+                    <p>Servicio especializado de costura para pedidos específicos y maquila de alta costura con acabados de primera calidad.</p>
+                </div>
+                <div class="servicio-imagen">
+                    <img src="https://via.placeholder.com/300x200?text=Prendas+Varias" alt="Servicio 3">
+                </div>
+            </div>
+
+            <div class="servicio-item">
+                <div class="servicio-texto">
+                    <h2>Tienda física</h2>
+                    <p>Visítenos directamente en nuestras instalaciones donde podrá adquirir saldos de exportación y telas por metro a precios de fábrica.</p>
+                </div>
+                <div class="servicio-imagen">
+                    <img src="https://via.placeholder.com/300x200?text=Nuestra+Tienda" alt="Servicio 4">
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="section">
+            <h1>Contáctenos</h1>
+            <p><strong>Dirección:</strong> Tejar de El Guarco, Cartago, Costa Rica.</p>
+            <p><strong>Teléfono:</strong> +506 25XX-XXXX</p>
+            <p><strong>Email:</strong> info@textilera.com</p>
+            <p><strong>WhatsApp:</strong> +506 8XXX-XXXX</p>
+            
+            <div class="redes-sociales">
+                <a href="#">TikTok</a>
+                <a href="#">Instagram</a>
+            </div>
+
+            <h3>Ubicación</h3>
+            <p>Puede encontrarnos fácilmente usando Waze en el Tejar de El Guarco.</p>
+            <div class="mapa-contenedor">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15721.782877543884!2d-83.9458933!3d9.8545809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa11e64988775df%3A0xc3f982390f757279!2sEl%20Tejar%2C%20Cartago%20Province!5e0!3m2!1sen!2scr!4v1700000000000" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="cintillo-inferior">
+            <p>&copy; 2026 Textilera El Tejar - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Ocultar todas las secciones
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(sec => sec.classList.remove('active'));
+
+            // Mostrar la sección seleccionada
+            const activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
+
+            // Subir el scroll automáticamente
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
