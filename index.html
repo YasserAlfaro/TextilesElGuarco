@@ -114,6 +114,57 @@
         /* Estilos Contacto */
         .mapa { margin-top: 20px; width: 100%; height: 350px; border: 0; border-radius: 10px; }
         .social-links a { margin-right: 15px; color: #780E0E; font-weight: bold; }
+		
+		
+		
+		
+		/* Estilos generales para Computadora */
+		.navbar {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			background-color: #333;
+			color: white;
+			padding: 15px 5%;
+		}
+
+		.menu { display: flex; list-style: none; }
+		.menu li a { color: white; text-decoration: none; padding: 10px 15px; }
+		#menu-bar, .menu-icon { display: none; } /* Escondemos el botón en PC */
+
+		/* --- ESTILOS PARA TELÉFONO (Móvil) --- */
+		@media (max-width: 768px) {
+			.menu-icon { 
+				display: block; /* Aparecen las 3 rayitas */
+				cursor: pointer;
+				font-size: 25px;
+			}
+
+			.menu {
+				position: absolute;
+				top: 60px; left: 0;
+				width: 100%;
+				background: #333;
+				flex-direction: column; /* Apila los botones hacia abajo */
+				display: none; /* Se oculta por defecto */
+			}
+
+			.menu li { border-top: 1px solid #444; width: 100%; text-align: center; }
+
+			/* Cuando el checkbox está marcado, mostramos el menú */
+			#menu-bar:checked ~ .menu {
+				display: flex;
+			}
+		}
+		
+		
+		@media (max-width: 768px) {
+		.logo {
+			max-width: 120px; /* Tamaño más pequeño para que no estorbe */
+			height: auto;
+		}
+		}
+		
     </style>
 </head>
 <body>
@@ -125,11 +176,17 @@
 		<h1 class="titulo-sobresaliente" align="center">Textiles el Guarco</h1>
 	</div>
 	
+
+	<nav class="navbar">
     
     <nav>
         <div class="logo">
-            <img src="IMG/Logo1.png" alt="Logo de la Textilera">
+            <img src="IMG/Logo1.PNG" alt="Logo de la Textilera">
         </div>
+		
+		<input type="checkbox" id="menu-bar">
+		<label for="menu-bar" class="menu-icon">☰</label>
+		
         <ul class="menu">
             <li><a onclick="navegar('inicio')">Inicio</a></li>
             <li><a onclick="navegar('historia')">Historia</a></li>
@@ -137,6 +194,7 @@
             <li><a onclick="navegar('contacto')">Contáctenos</a></li>
         </ul>
     </nav>
+	</nav>
 </header>
 
 <div class="container">
@@ -228,5 +286,4 @@
 </script>
 
 </body>
-
 </html>
