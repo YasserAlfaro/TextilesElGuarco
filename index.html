@@ -300,7 +300,21 @@
         // Regresar arriba
         window.scrollTo({top: 0, behavior: 'smooth'});
     }
+
+			// Seleccionamos todos los enlaces del menú
+	  const menuLinks = document.querySelectorAll('.menu li a');
+	  const menuCheckbox = document.getElementById('menu-bar');
+
+	  // Por cada enlace, agregamos un evento de "clic"
+	  menuLinks.forEach(link => {
+		link.addEventListener('click', () => {
+		  // Cuando se hace clic, desmarcamos el checkbox para cerrar el menú
+		  menuCheckbox.checked = false;
+		});
+	  });
+	
 </script>
 
 </body>
 </html>
+
