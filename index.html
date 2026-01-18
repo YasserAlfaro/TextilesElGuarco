@@ -135,35 +135,52 @@
 		/* --- ESTILOS PARA TELÉFONO (Móvil) --- */
 		@media (max-width: 768px) {
 			.menu-icon { 
-				display: block; /* Aparecen las 3 rayitas */
+				display: block; 
 				cursor: pointer;
-				font-size: 25px;
+				font-size: 28px;
+				color: white;
 			}
 
 			.menu {
-				position: absolute;
-				top: 60px; left: 0;
+				position: absolute;      /* Flota sobre el contenido */
+				top: 100%;               /* Se despliega justo debajo de la barra */
+				left: 0;
 				width: 100%;
 				background: #333;
-				flex-direction: column; /* Apila los botones hacia abajo */
-				display: none; /* Se oculta por defecto */
+				flex-direction: column;
+				display: none; 
+				z-index: 9999;           /* ¡ESTO ES LO MÁS IMPORTANTE! Lo pone al frente de todo */
+				box-shadow: 0px 4px 10px rgba(0,0,0,0.3); /* Sombra para que se note que está encima */
 			}
 
-			.menu li { border-top: 1px solid #444; width: 100%; text-align: center; }
+			.menu li { 
+				border-top: 1px solid #444; 
+				width: 100%; 
+			}
 
-			/* Cuando el checkbox está marcado, mostramos el menú */
+			.menu li a {
+				display: block;          /* Hace que toda la línea sea clickable */
+				padding: 15px;
+				width: 100%;
+			}
+
+			/* Mostrar menú cuando se activa el checkbox */
 			#menu-bar:checked ~ .menu {
 				display: flex;
 			}
+			
+			/* Aseguramos que el contenedor del menú sea relativo para que el absoluto funcione */
+			.navbar {
+				position: relative; 
+			}
+			
+			.logo {
+				max-width: 120px; /* Tamaño más pequeño para que no estorbe */
+				height: auto;
+			}
 		}
 		
 		
-		@media (max-width: 768px) {
-		.logo {
-			max-width: 120px; /* Tamaño más pequeño para que no estorbe */
-			height: auto;
-		}
-		}
 		
     </style>
 </head>
@@ -287,4 +304,3 @@
 
 </body>
 </html>
-
