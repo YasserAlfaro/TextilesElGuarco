@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Textiles - El Tejar</title>
     <style>
         /* Reset básico y tipografía */
@@ -10,7 +11,7 @@
         body { font-family: Arial, sans-serif; background-color: #fdfdfd; color: #333; }
 
         /* Encabezado */
-        header { background-color: #ffffff; width: 100%; border-bottom: 3px solid #780E0E; }
+        header { background-color: #ffffff; width: 100%; border-bottom: 3px solid #2f3b69; }
         
         /* Cintillo superior */
         
@@ -71,7 +72,7 @@
         .menu li { margin-left: 20px; }
         .menu a {
             text-decoration: none;
-            color: #780E0E;
+            color: #2f3b69;
             font-weight: bold;
             cursor: pointer;
             text-transform: uppercase;
@@ -104,7 +105,7 @@
 
         /* Pie de página (Cintillo) */
         footer {
-            background-color: #780E0E;
+            background-color: #2f3b69;
             color: white;
             padding: 20px;
             text-align: center;
@@ -113,7 +114,7 @@
 
         /* Estilos Contacto */
         .mapa { margin-top: 20px; width: 100%; height: 350px; border: 0; border-radius: 10px; }
-        .social-links a { margin-right: 15px; color: #780E0E; font-weight: bold; }
+        .social-links a { margin-right: 15px; color: #2f3b69; font-weight: bold; }
 		
 		
 		
@@ -123,7 +124,7 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			background-color: #333;
+			background-color: #2f3b69;
 			color: white;
 			padding: 15px 5%;
 		}
@@ -180,6 +181,18 @@
 			}
 		}
 		
+		.social-links a {
+			font-size: 24px;      /* Tamaño del icono */
+			margin-right: 15px;   /* Espacio entre iconos */
+			color: #333;          /* Color inicial */
+			text-decoration: none;
+			transition: color 0.3s ease;
+		}
+
+		.social-links a:hover {
+			color: #ee1d52;       /* Color al pasar el mouse (estilo TikTok) */
+		}
+		
 		
 		
     </style>
@@ -188,10 +201,11 @@
 
 <header>
     <!--<div class="cintillo-top"></div>-->
-	
+	<!--
 	<div class="cintillo-top">
 		<h1 class="titulo-sobresaliente" align="center">Textiles el Guarco</h1>
 	</div>
+	-->
 	
 
 	<nav class="navbar">
@@ -218,9 +232,9 @@
     
     <section id="inicio" class="apartado activo">
         <h1>Bienvenidos</h1>
-        <p style="margin-top:20px;"><strong>Presentación:</strong> Somos una empresa líder en el sector textil, comprometida con la creación de productos de alta calidad que visten los sueños de nuestros clientes.</p>
-        <p style="margin-top:15px;"><strong>Misión:</strong> Fabricar soluciones textiles integrales con eficiencia y responsabilidad, garantizando bienestar para nuestros empleados y valor para nuestros clientes.</p>
-        <p style="margin-top:15px;"><strong>Visión:</strong> Ser reconocidos mundialmente por nuestra innovación en procesos sostenibles y la excelencia en el diseño de prendas industriales y casuales.</p>
+        <p style="margin-top:20px;"><strong>Presentación:</strong> <br> Somos una empresa líder en el sector textil, comprometida con la creación de productos de alta calidad que visten los sueños de nuestros clientes.<br><br></p>
+        <p style="margin-top:15px;"><strong>Misión:</strong> <br>Ser proveedor eficiente de cada uno de nuestros clientes, ofreciendo la mayor variedad en la confección de productos textiles, con el mejor servicio y los precios más competitivos del mercado.<br><br></p>
+        <p style="margin-top:15px;"><strong>Visión:</strong> <br> Perfeccionar continuamente en diseños, materia prima, que le brinden a nuestros clientes un valor agregado en el producto terminado, logrando satisfacer las necesidades y contribuir a la buena imagen del consumidor.<br><br></p>
     </section>
 
     <section id="historia" class="apartado">
@@ -269,23 +283,38 @@
     <section id="contacto" class="apartado">
         <h1>Hablemos</h1>
         <div style="margin-top:20px;">
-            <p>📍 <strong>Dirección:</strong> Tejar de El Guarco, Cartago, Costa Rica.</p>
-            <p>📞 <strong>Teléfono:</strong> 25XX-XXXX</p>
-            <p>📧 <strong>Email:</strong> contacto@textilera.com</p>
-            <p>📱 <strong>WhatsApp:</strong> 8888-8888</p>
-            <div class="social-links" style="margin-top:15px;">
-                <a href="#">TikTok</a>
+            <p>📍 <strong>Dirección:</strong> 25 mts norte del Cementerio de Tejar, El Guarco, Cartago, Costa Rica.</p>
+            <p>📞 <strong>Teléfono:</strong> 2551-1316</p>
+            <p>📧 <strong>Email:</strong> info@textileselguarco.com</p>
+            <p>📱 <strong>WhatsApp:</strong> 8812-2708</p>
+            <!--<div class="social-links" style="margin-top:15px;">
+                <a href="https://www.tiktok.com/@tiendahotjeans3?is_from_webapp=1&sender_device=pc">TikTok</a>
                 <a href="#">Instagram</a>
-            </div>
+            </div>-->
+			
+			<div class="social-links" style="margin-top:15px;">
+				<a href="https://www.tiktok.com/@tiendahotjeans3?is_from_webapp=1&sender_device=pc" target="_blank" title="TikTok">
+					<i class="fa-brands fa-tiktok"></i>
+				</a>
+				
+				<a href="#" target="_blank" title="Instagram">
+					<i class="fa-brands fa-instagram"></i>
+				</a>
+			</div>
+			
         </div>
+		<br>
+		<br>
         
-        <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15725.123456789!2d-83.9515!3d9.8456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa11fd2e12e1234%3A0x123456789abcdef!2sTejar%2C%20Cartago!5e0!3m2!1ses!2scr!4v123456789"></iframe>
+        <!--<iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15725.123456789!2d-83.9515!3d9.8456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa11fd2e12e1234%3A0x123456789abcdef!2sTejar%2C%20Cartago!5e0!3m2!1ses!2scr!4v123456789"></iframe>-->
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1230.9906238467536!2d-83.93971263037655!3d9.85200649939037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e1007e138307%3A0x7b05072e48fbb85d!2sTextiles%20El%20Guarco!5e1!3m2!1ses-419!2scr!4v1768952752608!5m2!1ses-419!2scr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>		
+		
     </section>
 
 </div>
 
 <footer>
-    <p>Textiles El Tejar &copy; 2026 | El Guarco, Cartago, Costa Rica</p>
+    <p>Textiles El Guarco &copy; 2026 | El Guarco, Cartago, Costa Rica</p>
 </footer>
 
 <script>
@@ -300,8 +329,9 @@
         // Regresar arriba
         window.scrollTo({top: 0, behavior: 'smooth'});
     }
-
-			// Seleccionamos todos los enlaces del menú
+	
+	
+		// Seleccionamos todos los enlaces del menú
 	  const menuLinks = document.querySelectorAll('.menu li a');
 	  const menuCheckbox = document.getElementById('menu-bar');
 
@@ -317,4 +347,3 @@
 
 </body>
 </html>
-
