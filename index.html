@@ -61,6 +61,7 @@
             justify-content: space-between;
             padding: 10px 5%;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+			width: 100%;
         }
 
         .logo img {
@@ -135,11 +136,24 @@
 
 		/* --- ESTILOS PARA TELÉFONO (Móvil) --- */
 		@media (max-width: 768px) {
+		
+			nav {
+				display: flex;
+				justify-content: space-between; 
+				width: 100%;
+			}
+		
 			.menu-icon { 
 				display: block; 
 				cursor: pointer;
 				font-size: 28px;
 				color: white;
+				order: 2;       /* Asegura que sea el segundo elemento visual */
+				margin-left: auto; /* Empuja el icono a la derecha */
+			}
+			
+			.logo {
+				order: 1; /* El logo se queda a la izquierda */
 			}
 
 			.menu {
@@ -193,7 +207,44 @@
 			color: #ee1d52;       /* Color al pasar el mouse (estilo TikTok) */
 		}
 		
+		p {
+			margin-bottom: 20px; /* Ajusta este valor a tu gusto */
+		}
 		
+		
+		
+		/* Estilos para la sección Galería */
+		.contenedor-galeria {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Columnas automáticas */
+			gap: 15px; /* Espacio entre fotos */
+			padding: 20px;
+		}
+
+		.galeria-item {
+			overflow: hidden;
+			border-radius: 8px; /* Bordes redondeados elegantes */
+			box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+			transition: transform 0.3s ease; /* Efecto suave al pasar el mouse */
+			cursor: pointer;
+			height: 200px; /* Altura fija para uniformidad */
+		}
+
+		.galeria-item img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover; /* Evita que las fotos se deformen */
+			transition: transform 0.5s ease;
+		}
+
+		/* Efecto Hover (al pasar el ratón) */
+		.galeria-item:hover {
+			transform: translateY(-5px); /* Se levanta un poco */
+		}
+
+		.galeria-item:hover img {
+			transform: scale(1.1); /* Zoom suave a la imagen */
+		}
 		
     </style>
 </head>
@@ -216,11 +267,13 @@
         </div>
 		
 		<input type="checkbox" id="menu-bar">
-		<label for="menu-bar" class="menu-icon">☰</label>
+		<label for="menu-bar" class="menu-icon">MENU</label>
 		
+		<!--<label for="menu-bar" class="menu-icon">Menú</label>-->
         <ul class="menu">
             <li><a onclick="navegar('inicio')">Inicio</a></li>
             <li><a onclick="navegar('historia')">Historia</a></li>
+			<li><a onclick="navegar('galeria')">Galeria</a></li>
             <li><a onclick="navegar('servicios')">Servicios</a></li>
             <li><a onclick="navegar('contacto')">Contáctenos</a></li>
         </ul>
@@ -232,16 +285,26 @@
     
     <section id="inicio" class="apartado activo">
         <h1>Bienvenidos</h1>
-        <p style="margin-top:20px;"><strong>Presentación:</strong> <br> Somos una empresa líder en el sector textil, comprometida con la creación de productos de alta calidad que visten los sueños de nuestros clientes.<br><br></p>
-        <p style="margin-top:15px;"><strong>Misión:</strong> <br>Ser proveedor eficiente de cada uno de nuestros clientes, ofreciendo la mayor variedad en la confección de productos textiles, con el mejor servicio y los precios más competitivos del mercado.<br><br></p>
-        <p style="margin-top:15px;"><strong>Visión:</strong> <br> Perfeccionar continuamente en diseños, materia prima, que le brinden a nuestros clientes un valor agregado en el producto terminado, logrando satisfacer las necesidades y contribuir a la buena imagen del consumidor.<br><br></p>
+		<p></p>
+        <p style="margin-top:20px;"><strong>Presentación:</strong> <p></p> <br> Textiles El Guarco es una empresa centraliza y especializada en uniformes industriales. En la actualidad cuenta con procesos de diseño, corte y confección con tecnología de punta y personal técnico especializado en sus propias instalaciones. <br><br></p>
+        <p style="margin-top:15px;"><strong>Misión:</strong> <p></p><br>Ser proveedor eficiente de cada uno de nuestros clientes, ofreciendo la mayor variedad en la confección de productos textiles, con el mejor servicio y los precios más competitivos del mercado.<br><br></p>
+        <p style="margin-top:15px;"><strong>Visión:</strong> <p></p><br> Perfeccionar continuamente en diseños, materia prima, que le brinden a nuestros clientes un valor agregado en el producto terminado, logrando satisfacer las necesidades y contribuir a la buena imagen del consumidor.<br><br></p>
     </section>
 
     <section id="historia" class="apartado">
         <h1>Nuestra Trayectoria</h1>
-        <p>Iniciamos operaciones en el año [Año], con el firme propósito de revolucionar la manufactura local. Lo que comenzó con un par de máquinas de coser, ha crecido hasta convertirse en una planta robusta.</p>
-        <p>A lo largo de los años, nos hemos expandido logrando emplear a un gran equipo de profesionales locales. Nuestra ubicación en el área de Cartago nos permite una logística envidiable.</p>
-        <p>Cumplimos estrictamente con toda la legislación de Costa Rica: cargas sociales, permisos del Ministerio de Salud y normativas municipales, asegurando un trabajo justo y seguro.</p>
+		<p></p><p></p>
+		<p>Textiles El Guarco fue fundada el 2022, con domicilio en Tejar de El Guarco, Cartago, 25mtrs norte del cementerio. </p>
+		<p>Su creación se dio por la amplia experiencia que tiene su socio fundador, Elmer Castro en la línea de textil, desde el 2005 se dedicaba a la importación y ventas de diferentes tipos de tela casual e industrial (army, denims 100% algodón, strech , etc.). </p> 
+		<p>El Sr Castro, obtuvo tanto éxito en la importación y distribución de telas que decidió hacer su propia marca de ropa y empezó a subcontratar talleres donde le confeccionaban ropa para tiendas y empresas del mercado local. Cabe mencionar que todo el negocio lo manejaba a título personal y no fue hasta el año 2022 que nació la sociedad arriba mencionada. </p>
+		<p>En la transición de pasar de persona física a jurídica, se vio la necesidad de centralizar todo en un solo lugar y fue ahí donde se compró una propiedad para tener unas instalaciones propia y poder operar en condiciones totalmente adecuadas, para poder obtener el ciclo que conlleva hacer una prenda de calidad. </p>
+		<p>En las instalaciones contamos con los departamentos de corte y confección, diseño, bordado, sublimado, también contamos con máquinas de última tecnología y lo más importante contamos con colaboradores totalmente técnicos y profesionales para que nuestros clientes obtengan el mejor producto del mercado con eficiencia y responsabilidad </p>
+		
+		
+		<p>Creemos y estamos convencidos que la llave del éxito para la supervivencia de nuestra empresa es la calidad de los productos y servicios ofrecidos a nuestros clientes.</p>
+
+		
+
     </section>
 
     <section id="servicios" class="apartado">
@@ -250,7 +313,8 @@
         <div class="servicio-caja">
             <div class="servicio-info">
                 <h2>Confección de uniformes industriales</h2>
-                <p>Prendas diseñadas para la protección y comodidad del trabajador, usando telas de alta resistencia química y mecánica.</p>
+				<p></p>
+                <p>Fabricamos prendas de alto desempeño diseñadas para garantizar la seguridad y ergonomía del personal en entornos exigentes. Utilizamos textiles técnicos con alta resistencia mecánica al rasgado y protección química, asegurando una vida útil prolongada y máxima comodidad durante la jornada laboral.</p>
             </div>
             <div class="servicio-img"><img src="S_UniformesIndustriales.jpeg" alt="Servicio 1"></div>
         </div>
@@ -258,7 +322,8 @@
         <div class="servicio-caja">
             <div class="servicio-info">
                 <h2>Confección de ropa casual</h2>
-                <p>Líneas de moda para el día a día, enfocadas en tendencias modernas y textiles frescos como algodón y lino.</p>
+				<p></p>
+                <p>Desarrollamos líneas de vestuario enfocadas en las últimas tendencias globales, fusionando estilo moderno con una funcionalidad excepcional para el uso diario. Nuestras prendas se distinguen por el uso de fibras naturales como algodón de alta calidad y lino, garantizando frescura, ligereza y una caída impecable que se adapta al ritmo de vida actual.</p>
             </div>
             <div class="servicio-img"><img src="S_RopaCasual.jpeg" alt="Servicio 2"></div>
         </div>
@@ -266,7 +331,8 @@
         <div class="servicio-caja">
             <div class="servicio-info">
                 <h2>Confección de prendas</h2>
-                <p>Trabajos a medida y producción en serie de camisas, pantalones y accesorios textiles de alta gama.</p>
+				<p></p>
+                <p>Ofrecemos un servicio especializado que abarca desde la creación de piezas exclusivas a medida hasta la producción masiva en serie de camisas, pantalones y accesorios textiles. Bajo rigurosos estándares de calidad y utilizando maquinaria de última generación, garantizamos acabados de alta gama en cada prenda, asegurando uniformidad y excelencia tanto en pedidos personalizados como en grandes volúmenes.</p>
             </div>
             <div class="servicio-img"><img src="S_ConfeccionDePrendas.jpeg" alt="Servicio 3"></div>
         </div>
@@ -274,11 +340,23 @@
         <div class="servicio-caja">
             <div class="servicio-info">
                 <h2>Tienda física</h2>
-                <p>Visítenos en nuestro punto de venta directo para conocer nuestras colecciones y aprovechar precios de fábrica.</p>
+				<p></p>
+                <p>Le invitamos a visitar nuestra tienda física ubicada en nuestras instalaciones centrales en Cartago, donde podrá experimentar de primera mano la calidad de nuestros textiles y acabados. Al comprar directamente con el fabricante, usted accede a colecciones exclusivas y a precios de fábrica altamente competitivos, recibiendo asesoría personalizada por parte de nuestro equipo técnico para elegir la prenda ideal.</p>
             </div>
             <div class="servicio-img"><img src="S_TiendaFisica.jpeg" alt="Servicio 4"></div>
         </div>
     </section>
+
+
+
+
+	
+	<section id="galeria" class="apartado">
+		<h1>Galería de Imágenes</h1>
+		<div class="contenedor-galeria" id="grid-galeria">
+			</div>
+	</section>
+	
 
     <section id="contacto" class="apartado">
         <h1>Hablemos</h1>
@@ -286,18 +364,18 @@
             <p>📍 <strong>Dirección:</strong> 25 mts norte del Cementerio de Tejar, El Guarco, Cartago, Costa Rica.</p>
             <p>📞 <strong>Teléfono:</strong> 2551-1316</p>
             <p>📧 <strong>Email:</strong> info@textileselguarco.com</p>
-            <p>📱 <strong>WhatsApp:</strong> 8812-2708</p>
+            <p>📱 <strong>WhatsApp:</strong> 8657-7601</p>
             <!--<div class="social-links" style="margin-top:15px;">
                 <a href="https://www.tiktok.com/@tiendahotjeans3?is_from_webapp=1&sender_device=pc">TikTok</a>
                 <a href="#">Instagram</a>
             </div>-->
 			
 			<div class="social-links" style="margin-top:15px;">
-				<a href="https://www.tiktok.com/@tiendahotjeans3?is_from_webapp=1&sender_device=pc" target="_blank" title="TikTok">
+				<a href="https://www.tiktok.com/@textileselguarco?lang=es" target="_blank" title="TikTok">
 					<i class="fa-brands fa-tiktok"></i>
 				</a>
 				
-				<a href="#" target="_blank" title="Instagram">
+				<a href="https://www.instagram.com/textileselguarco/" target="_blank" title="Instagram">
 					<i class="fa-brands fa-instagram"></i>
 				</a>
 			</div>
@@ -343,6 +421,28 @@
 		});
 	  });
 	
+</script>
+
+
+<script>
+    const galeria = document.getElementById('grid-galeria');
+    const totalImagenes = 32;
+
+    for (let i = 1; i <= totalImagenes; i++) {
+        // Creamos el contenedor de la imagen
+        const item = document.createElement('div');
+        item.classList.add('galeria-item');
+
+        // Creamos la imagen
+        const img = document.createElement('img');
+        img.src = `IMG2/${i}.JPG`;
+        img.alt = `Imagen de Textiles ${i}`;
+        img.loading = "lazy"; // Esto hace que la página cargue más rápido
+
+        // Metemos la imagen en el div, y el div en la galería
+        item.appendChild(img);
+        galeria.appendChild(item);
+    }
 </script>
 
 </body>
